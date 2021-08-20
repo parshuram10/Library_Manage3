@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="student.css">
+</head>
+
+<body>
+
+    <div class="stud-page">
+        <div class="stud-name">Student</div>
+        <div class="stud-btn">
+            <input class="view-b" type="submit" value="View">
+            <input class="search-b" type="submit" value="Search">
+            <input class="ord-b" type="submit" value="Order">
+            <input class="ret-b" type="submit" value="Return">
+            <input class="info-b" type="submit" value="Info.">
+        </div>
+    </div>
+
+    <div class="book-view">
+        <h1>Book View</h1>
+        <div class="view">
+            <form action="backend.java">
+                <div>
+                    <label>Title</label>
+                    <input type="text" class="book-tit">
+                </div>
+                <div>
+                    <label>Author</label>
+                    <input type="text" class="book-author">
+                </div>
+                <div>
+                    <label></label>
+                    <input type="submit" value="View" class="st-btn">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="book-search">
+        <h1>Book Search</h1>
+        <div class="view">
+            <form action="backend.java">
+                <div>
+                    <label>Title</label>
+                    <input type="text" class="book-tit">
+                </div>
+                <div>
+                    <label>Author</label>
+                    <input type="text" class="book-author">
+                </div>
+                <div>
+                    <label></label>
+                    <input type="submit" value="Search" class="st-btn">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="book-ret">
+        <h1>Return Book</h1>
+        <div class="view">
+            <input type="submit" value="Return" class="book-ret">
+        </div>
+    </div>
+    <div class="book-order">
+        <h1>Order Book</h1>
+        <div class="view">
+            <form action="backend.java">
+                <div>
+                    <label>Title</label>
+                    <input type="text" class="book-tit">
+                </div>
+                <div>
+                    <label>Author</label>
+                    <input type="text" class="book-author">
+                </div>
+                <div>
+                    <label></label>
+                    <input type="submit" value="Order" class="st-btn">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="book-info">
+        <h1>Fine Details</h1>
+        <div class="view">
+            <input type="submit" value="Info." class="info-btn">
+        </div>
+    </div>
+    <div>
+        <img id="signout" src="signout.svg" alt="Invalid">
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type:"text/javascript" src="student.js"></script>
+</body>
+
+</html>

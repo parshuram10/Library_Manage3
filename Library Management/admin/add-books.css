@@ -1,0 +1,38 @@
+label{
+    width: 250px;
+    display: inline-block;
+    text-align: right;
+}
+.add-form{
+    width: 50%;
+    margin: auto;
+    margin-top: 40px;
+}
+h1{
+    text-align: center;
+}
+.book-id{
+    margin: 10px;
+}
+.book-tit{
+    margin: 10px;
+}
+.book-author{
+    margin: 10px;
+}
+.book-cost{
+    margin: 10px;
+}
+.book-quant{
+    margin: 10px;
+}
+.add-btn{
+    margin: 10px;
+    margin-left: 57px;
+}
+.up-b{
+    margin-left: 25%;
+}
+.search-btn{
+    margin-left: 67px;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="add-books.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="adm-page">
+        <div class="adm-name">Admin</div>
+        <div class="adm-btn">
+            <input class="add-b" type="submit" value="Add">
+            <input class="updat-b" type="submit" value="Update">
+            <input class="del-b" type="submit" value="Delete">
+            <input class="search-b" type="submit" value="Search">
+            <input class="view-b" type="submit" value="View">
+        </div>
+    </div>
+
+    <div class="add-form">
+        <h1>Add</h1>
+        <form action="backend.java">
+            <div>
+                <label>Book id:</label>
+                <input type="text" class="book-id">
+            </div>
+            <div>
+                <label>Title:</label>
+                <input type="text" class="book-tit">
+            </div>
+            <div>
+                <label>Author Name:</label>
+                <input type="text" class="book-author">
+            </div>
+            <div>
+                <label>Cost:</label>
+                <input type="text" class="book-cost">
+            </div>
+            <div>
+                <label>Quantity:</label>
+                <input type="text" class="book-quant">
+            </div>
+            <div>
+                <label></label>
+                <input type="submit" class="add-btn">
+            </div>
+        </form>
+    </div>
+    <div class="book-update">
+        <form action="backend.java">
+            <h1>Update</h1>
+            <div class="up-b">
+                <div id="book-id">
+                    <label>Book ID</label>
+                    <input type="text" class="book-id">
+                </div>
+                <div>
+                    <label></label>
+                    <input type="submit" class="search-btn" value="Update">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="book-del">
+        <form action="backend.java">
+            <h1>Delete</h1>
+            <div class="up-b">
+                <div id="book-id">
+                    <label>Book ID</label>
+                    <input type="text" class="book-id">
+                </div>
+                <div>
+                    <label></label>
+                    <input type="submit" class="search-btn" value="Delete">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="book-search">
+        <form action="backend.java">
+            <h1>Search</h1>
+            <div class="up-b">
+                <div id="book-id">
+                    <label>Book ID</label>
+                    <input type="text" class="book-id">
+                </div>
+                <div>
+                    <label></label>
+                    <input type="submit" class="search-btn" value="Search">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="book-view">
+        <h1>View</h1>
+        <form action="backend.java">
+            <div class="up-b">
+                <div>
+                    <label>Title</label>
+                    <input type="text" class="book-tit">
+                </div>
+                <div>
+                    <label>Author</label>
+                    <input type="text" class="book-author">
+                </div>
+                <div>
+                    <label></label>
+                    <input type="submit" value="View" class="search-btn">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div>
+        <img id="signout" src="signout.svg" alt="">
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type:"text/javascript" src="admin.js"></script>
+</body>
+
+</html>

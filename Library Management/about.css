@@ -1,0 +1,35 @@
+body{
+    background-image: url('images/about-back.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+h1{
+    width: 80%;
+    margin: auto;
+    color: red;
+    font-size: 80px;
+}
+h4{
+    width: 70%;
+    margin: auto;
+    color: purple;
+    font-size: 35px;
+    margin-top: 30px;
+}
+p{
+    width: 70%;
+    margin: auto;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: green;
+}
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}

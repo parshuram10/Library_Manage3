@@ -1,0 +1,127 @@
+body{
+    background-image: url("adm-bck.jpg");
+    background-size:cover;
+    background-color: black;
+}
+
+.adm-name{
+    margin: auto;
+    color: rgb(8 8 8);
+    font-size: 150px;
+    width: 60%;
+    text-align: center;
+}
+.adm-name:hover{
+    color: red;
+}
+
+.adm-btn{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.add-b{
+    width: 180px;
+    height: 50px;
+    margin: 10px;
+    border: none;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    background-color: rgb(243, 237, 243);
+}
+.add-b:hover{
+    background-color: rgb(190, 173, 173);
+    color: rgb(11, 141, 248);
+    font-weight: bold;
+    transition: 1s;
+}
+.updat-b{
+    width: 180px;
+    height: 50px;
+    margin: 10px;
+    border: none;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    background-color: rgb(243, 237, 243);
+}
+.updat-b:hover{
+    background-color: rgb(190, 173, 173);
+    color: rgb(11, 141, 248);
+    font-weight: bold;
+    transition: 1s;
+}
+.del-b{
+    width: 180px;
+    height: 50px;
+    margin: 10px;
+    border: none;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    background-color: rgb(243, 237, 243);
+}
+.del-b:hover{
+    background-color: rgb(190, 173, 173);
+    color: rgb(11, 141, 248);
+    font-weight: bold;
+    transition: 1s;
+}
+.search-b{
+    width: 180px;
+    height: 50px;
+    margin: 10px;
+    border: none;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    background-color: rgb(243, 237, 243);
+}
+.search-b:hover{
+    background-color: rgb(190, 173, 173);
+    color: rgb(11, 141, 248);
+    font-weight: bold;
+    transition: 1s;
+}
+.view-b{
+    width: 180px;
+    height: 50px;
+    margin: 10px;
+    border: none;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    background-color: rgb(243, 237, 243);
+}
+.view-b:hover{
+    background-color: rgb(190, 173, 173);
+    color: rgb(11, 141, 248);
+    font-weight: bold;
+    transition: 1s;
+}
+.add-form{
+    display: none;
+}
+.book-update{
+    display: none;
+}
+.book-search{
+    display: none;
+}
+.book-del{
+    display: none;
+}
+.book-view{
+    display: none;
+}
+#signout{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    display: inline-block;
+    right: 35px;
+    bottom: 35px;
+
+}
