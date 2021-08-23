@@ -1,7 +1,7 @@
 body{
     background-image: url("adm-bck.jpg");
     background-size:cover;
-    background-color: black;
+    background-color: rgba(27, 31, 34, 0.85);
 }
 
 .adm-name{
@@ -123,5 +123,10 @@ body{
     display: inline-block;
     right: 35px;
     bottom: 35px;
-
+}
+@media screen and (max-width: 1024px) {
+    #signout{
+        display: none !important; 
+        
+    }   
 }

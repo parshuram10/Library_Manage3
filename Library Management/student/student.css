@@ -1,7 +1,8 @@
 body{
     background-image: url("stud-back.jpg");
-    background-color: black;
+    background-color: rgba(27, 31, 34, 0.85);
     background-size: cover;
+    font-family: 'Caveat', cursive;
 }
 
 .stud-name{
@@ -25,8 +26,8 @@ body{
     height: 50px;
     margin: 10px;
     border: none;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-family: 'Caveat', cursive;
     border-radius: 20px;
     background-color: rgb(151, 146, 146);
 }
@@ -40,8 +41,8 @@ body{
     height: 50px;
     margin: 10px;
     border: none;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-family: 'Caveat', cursive;
     border-radius: 20px;
     background-color: rgb(151, 146, 146);
 }
@@ -55,8 +56,8 @@ body{
     height: 50px;
     margin: 10px;
     border: none;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-family: 'Caveat', cursive;
     border-radius: 20px;
     background-color: rgb(151, 146, 146);
 }
@@ -70,8 +71,8 @@ body{
     height: 50px;
     margin: 10px;
     border: none;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-family: 'Caveat', cursive;
     border-radius: 20px;
     background-color: rgb(151, 146, 146);
 }
@@ -85,8 +86,8 @@ body{
     height: 50px;
     margin: 10px;
     border: none;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-family: 'Caveat', cursive;
     border-radius: 20px;
     background-color: rgb(151, 146, 146);
 }
@@ -135,4 +136,9 @@ label{
     right: 35px;
     bottom: 34px;
     background-color: white;
+}
+@media screen and (max-width: 1024px) {
+    #signout{
+        display: none !important; 
+    }   
 }

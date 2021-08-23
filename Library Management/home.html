@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            background-color: rgba(27, 31, 34, 0.85);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            line-height: 1.4;
+            letter-spacing: 0.5rem;
+            position: sticky;
+            margin-top: 40px;
+            color: #fff;
+            display: inline-block;
+        }
+
+        .imgLogo {
+            position: absolute;
+            margin-top: 40px;
+            text-align: right;
+            right: 34px;
+            width: 100px;
+            height: 50px;
+            display: inline-block;
+        }
+
+        .mainDiv {
+
+            width: 90%;
+            height: 500px;
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+            background-image: url('images/home1.jpg');
+            background-size: 100% 100%;
+            box-shadow: 1px 2px 10px 5px white;
+            animation: slider 9s infinite linear;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .imgLogo {
+                display: none !important;
+            }
+        }
+
+        @keyframes slider {
+            0% {
+                background-image: url('images/home1.jpg');
+            }
+
+            35% {
+                background-image: url('images/banner.png');
+            }
+
+            55% {
+                background-image: url('images/lib2.jpg');
+            }
+
+            85% {
+                background-image: url('images/home2.jpg');
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to Book Shell</h1>
+    <img src="images/logo.png" alt="" class="imgLogo">
+    <div class="mainDiv"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type:"text/javascript" src="library.js"></script>
+</body>
+
+</html>
