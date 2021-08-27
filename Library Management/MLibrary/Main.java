@@ -52,7 +52,7 @@ public class Main {
 		System.out.println("=======Welcome==========");
 		int i=1;
 		do{
-			System.out.println("Enter Yout Choice: \n 1.AddBook \n 2.Display Book \n 3.Update Book\n 4.Delete Book\n 5.Issued Book\n 6.Display Issue Book\n 7.Return Book");
+			System.out.println("Enter Yout Choice: \n 1.AddBook \n 2.Display Book \n 3.Update Book\n 4.Delete Book\n 5.Issued Book\n 6.Display Issue Book\n 7.Return Book\n 8.Search Book");
 			int k = sc.nextInt();
 			switch(k){
 				case 1:
@@ -76,6 +76,9 @@ public class Main {
 				case 7:
 					returnBook();
 					break;
+				case 8:
+					searchBook();
+					break;
 				default:
 					System.out.println("Enter Correct Choice  ):");
 			}
@@ -85,6 +88,33 @@ public class Main {
 		sc.close();
 	}
 	
+	private static void searchBook() {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Title for Search: ");
+		String name = sc.next();
+		
+		try {
+			
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,user,pass);
+			PreparedStatement stmt=con.prepareStatement("select * from books where title=?");
+			stmt.setString(1, name);
+			int i=0;
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {
+				System.out.print(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3)+" "+rs.getFloat(4));
+				i=1;
+			}
+			if(i==0) {
+				System.out.println("No Books Founds ):");
+			}
+			System.out.println();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	private static void displayIssue() {
 		// TODO Auto-generated method stub
 		System.out.println("Display Issued book...");
@@ -95,7 +125,7 @@ public class Main {
 			Statement stmt=con.createStatement();  
 			ResultSet rs=stmt.executeQuery("select * from issue order by id ASC"); 
 			while(rs.next())  
-			System.out.println(rs.getInt(1)+"      "+rs.getString(2)+"      "+rs.getString(3)+"      1"+rs.getFloat(4));  
+			System.out.println(rs.getInt(1)+"      "+rs.getString(2)+"      "+rs.getString(3)+"      "+rs.getFloat(4));  
 			
 			con.close();  
 			}catch(Exception e)
@@ -131,25 +161,28 @@ public class Main {
 		String name = null,author = null;
 		double price = 0;
 		try {          
-			Class.forName("com.mysql.jdbc.Driver");  
-			Connection con=DriverManager.getConnection(url,user,pass);  
-			Statement stmt=con.createStatement();  
-			ResultSet rs=stmt.executeQuery("select * from issue order by id ASC");  
-			while(rs.next()) {
-			name=rs.getString(2);
-			author=rs.getString(3);
-			price= rs.getFloat(4);  
+			          
+				Class.forName("com.mysql.jdbc.Driver");
+				Connection con = DriverManager.getConnection(url,user,pass);
+				PreparedStatement stmt=con.prepareStatement("select * from issue where id=?");
+				stmt.setInt(1, id);
+				ResultSet rs = stmt.executeQuery();
+				while(rs.next()) {
+					name=rs.getString(2);
+					author=rs.getString(3);
+					price = rs.getDouble(4);
+					
+				}
+				String sql = "INSERT INTO books VALUES (?, ?, ?, ?)";
+				PreparedStatement stmt1=con.prepareStatement(sql);  
+				stmt1.setInt(1,id);
+				stmt1.setString(2,name);
+				stmt1.setString(3, author);
+				stmt1.setDouble(4, price);
+			    stmt1.executeUpdate();
+			}catch(Exception e) {
+			e.printStackTrace();
 			}
-			String sql = "INSERT INTO books VALUES (?, ?, ?, ?)";
-			PreparedStatement stmt1=con.prepareStatement(sql);  
-			stmt1.setInt(1,id);
-			stmt1.setString(2,name);
-			stmt1.setString(3, author);
-			stmt1.setDouble(4, price);
-			stmt1.executeUpdate();		
-		}catch(Exception e) {
-		e.printStackTrace();
-		}
 	}
 	private static void issuedBook() {
 		// TODO Auto-generated method stub
@@ -161,14 +194,16 @@ public class Main {
 		String name = null,author = null;
 		double price = 0;
 		try {          
-			Class.forName("com.mysql.jdbc.Driver");  
-			Connection con=DriverManager.getConnection(url,user,pass);  
-			Statement stmt=con.createStatement();  
-			ResultSet rs=stmt.executeQuery("select * from books order by id ASC");  
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,user,pass);
+			PreparedStatement stmt=con.prepareStatement("select * from books where id=?");
+			stmt.setInt(1, id);
+			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
-			name=rs.getString(2);
-			author=rs.getString(3);
-			price= rs.getFloat(4);  
+				name=rs.getString(2);
+				author=rs.getString(3);
+				price = rs.getDouble(4);
+				
 			}
 			String sql = "INSERT INTO issue VALUES (?, ?, ?, ?)";
 			PreparedStatement stmt1=con.prepareStatement(sql);  

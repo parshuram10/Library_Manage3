@@ -1,0 +1,82 @@
+use data;
+
+create table student (id int primary key auto_increment, stud_firstName varchar(100),
+stud_lastName varchar(100),stud_dept varchar(50),addDate datetime default CURRENT_TIMESTAMP());
+
+desc student;
+
+create table emp (id int primary key auto_increment, emp_firstName varchar(100),
+emp_lastName varchar(100), address varchar(100),addDate datetime default CURRENT_TIMESTAMP());
+
+drop table college;
+
+insert into student(stud_firstName,stud_lastName,stud_dept) values ('Pooja','Mokal','Civil');
+select * from student;
+
+insert into emp(emp_firstName,emp_lastName,address) values ('Shubhangi','Shinde','Malshej');
+select * from emp;
+
+update student set stud_dept='comp' where id=1; 
+select * from student;
+
+select * from student where id BETWEEN 1 AND 3;
+
+select * from student where id<3 order by id desc;
+
+select student.id, student.stud_firstName, student.stud_lastName , 
+emp.id, emp.emp_firstName, emp.emp_lastName from student INNER JOIN emp ON
+student.stud_firstName = emp.emp_firstName;
+
+select student.id, student.stud_firstName, student.stud_lastName , 
+emp.id, emp.emp_firstName, emp.emp_lastName from student LEFT JOIN emp ON
+student.stud_firstName = emp.emp_firstName;
+
+select student.id, student.stud_firstName, student.stud_lastName , 
+emp.id, emp.emp_firstName, emp.emp_lastName from student RIGHT JOIN emp ON
+student.stud_firstName = emp.emp_firstName;
+
+select student.id, student.stud_firstName, student.stud_lastName , 
+emp.id, emp.emp_firstName, emp.emp_lastName from student LEFT JOIN emp ON
+student.stud_firstName = emp.emp_firstName UNION select student.id, student.stud_firstName, student.stud_lastName , 
+emp.id, emp.emp_firstName, emp.emp_lastName from student RIGHT JOIN emp ON
+student.stud_firstName = emp.emp_firstName;
+
+select student.id, student.stud_firstName, student.stud_lastName , 
+emp.id, emp.emp_firstName, emp.emp_lastName from student CROSS JOIN emp ON
+student.stud_firstName = emp.emp_firstName;
+
+select student.id, student.stud_firstName, student.stud_lastName , 
+emp.id, emp.emp_firstName, emp.emp_lastName from student CROSS JOIN emp ON
+student.stud_firstName = emp.emp_firstName;
+
+select student.id, student.stud_firstName, student.stud_lastName , 
+emp.id, emp.emp_firstName, emp.emp_lastName from emp, student where
+student.stud_firstName = emp.emp_firstName;
+
+select student.id, student.stud_firstName, student.stud_lastName , 
+emp.id, emp.emp_firstName, emp.emp_lastName from student LEFT JOIN emp ON
+student.stud_firstName = emp.emp_firstName UNION ALL select student.id, student.stud_firstName, student.stud_lastName , 
+emp.id, emp.emp_firstName, emp.emp_lastName from student RIGHT JOIN emp ON
+student.stud_firstName = emp.emp_firstName;
+
+select abs(-66),abs(66);
+select ceiling(12.34),ceiling(12);
+select degrees(PI()/2);
+select floor(2.6),floor(2.4);
+select ceil(2.6),ceil(2.4);
+
+select curdate();
+select curtime();
+select current_timestamp();
+select NOW();
+
+select user();
+select version();
+
+select sum(12+34+45+45+56);
+
+create view emp_view As select * from emp;
+select * from emp_view;
+
+update emp_view set emp_lastName='Patil' where id=4;
+
