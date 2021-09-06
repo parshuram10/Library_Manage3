@@ -23,8 +23,18 @@ public class BookController {
         return "index";
     }
 
+    @GetMapping("/showSearchBookForm")
+    public String showSearchBookForm(Model model,String keyword){
+        if(keyword!=null) {
+            model.addAttribute("listbooks", bookService.findByKeyword(keyword));
+        }else{
+            model.addAttribute("listbooks",bookService.getAllBook());
+        }
+        return "search_book";
+    }
+
     @GetMapping("/showNewBookForm")
-    public String showNewbookForm(Model model){
+    public String showNewBookForm(Model model){
         //Create model attribute to bind form data
         Book book = new Book();
         model.addAttribute("book",book);
@@ -44,9 +54,7 @@ public class BookController {
         Book book = bookService.getBookByID(id);
         //set book as model attribute to populate form
         model.addAttribute("book",book);
-
         return "update_book";
-
     }
 
     @GetMapping("/showDeleteBookForm/{id}")

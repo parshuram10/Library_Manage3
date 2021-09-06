@@ -42,4 +42,9 @@ public class BookServiceImpl implements BookService {
     public void deleteBookByID(long id) {
         this.bookRepository.deleteById(id);
     }
+
+    @Override
+    public List<Book> findByKeyword(String keyword) {
+        return bookRepository.findByKeyword(keyword);
+    }
 }

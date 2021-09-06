@@ -15,6 +15,7 @@
         <h2>Save Book</h2>
         <form action="#" th:action="@{/saveBook}" th:object="${book}"
         method="post">
+            <input type="hidden" th:field="*{id}">
             <input type="text" th:field="*{bookName}" placeholder="Book Name"
             class="form-control mb-4 col-4">
             <input type="text" th:field="*{bookAuthor}" placeholder="Book Author"
@@ -22,6 +23,7 @@
             <input type="text" th:field="*{price}" placeholder="Book Price"
                    class="form-control mb-4 col-4">
             <button type="submit" class="btn btn-info col-2">Save Book</button>
+            <button type="reset" class="btn btn-outline-dark col-1">Reset</button>
         </form>
     </div>
 </body>
