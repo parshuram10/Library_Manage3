@@ -37,7 +37,7 @@ public class StudentController {
     @GetMapping("/showReturnBookForm/{id}")
     public String showReturnBookForm(@PathVariable(value = "id") long id){
         this.studentService.deleteBookByid(id);
-        return "redirect:/";
+        return "issued_book";
     }
     @GetMapping("/showUpdateIssuedForm/{id}")
     public String showUpdateBookForm(@PathVariable(value = "id") long id, Model model){

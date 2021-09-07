@@ -3,6 +3,8 @@ package com.bookdemo.book.controller;
 import com.bookdemo.book.model.Book;
 import com.bookdemo.book.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,11 +27,7 @@ public class BookController {
 
     @GetMapping("/showSearchBookForm")
     public String showSearchBookForm(Model model,String keyword){
-        if(keyword!=null) {
-            model.addAttribute("listbooks", bookService.findByKeyword(keyword));
-        }else{
-            model.addAttribute("listbooks",bookService.getAllBook());
-        }
+        model.addAttribute("listbooks",bookService.getBook(keyword));
         return "search_book";
     }
 

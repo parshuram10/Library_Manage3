@@ -44,7 +44,10 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<Book> findByKeyword(String keyword) {
-        return bookRepository.findByKeyword(keyword);
+    public List<Book> getBook(String keyword) {
+        if(keyword!=null){
+            return bookRepository.search(keyword);
+        }
+        return bookRepository.findAll();
     }
 }

@@ -8,9 +8,8 @@ public interface BookService {
 
     List<Book> getAllBook();
     void saveEmployee(Book book);
-
+    List<Book> getBook(String keyword);
     Book getBookByID(long id);
     void deleteBookByID(long id);
 
-    List<Book> findByKeyword(String keyword);
 }

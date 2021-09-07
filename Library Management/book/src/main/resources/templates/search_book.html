@@ -9,20 +9,24 @@
           crossorigin="anonymous">
 </head>
 <body>
-
 <div class="container my-2">
-    <div >
-        <form th:action="@{listbooks}" method="get">
-        <input name="keyword" type="text" placeholder="Book Name For Search" class="form-control mb-4 col-6">
-        <button type="button" class="btn btn-success btn-sm mb-3">Book Search</button>
+    <h1 class="container my-2 font-italic" align="center">Search Book</h1>
+    <hr>
+    <div>
+        <form th:action="@{/showSearchBookForm}" method="get">
+        <input type="text" name="keyword" placeholder="Book Name For Search" class="form-control mb-4 col-6">
+        <button type="submit" class="btn btn-outline-primary btn-sm mb-3">Book Search</button>
+            <button type="reset" class="btn btn-outline-warning btn-sm mb-3 col-1">Clear</button>
+            <a th:href="@{/goHome}" class="btn btn-outline-dark btn-sm mb-3 col-1.5">Back to Home</a>
         </form>
     </div>
         <table border="1" class="table table-striped table-responsive-md table-hover">
-    <thead>
+    <thead align="center">
     <tr>
         <th>Book Name</th>
         <th>Author Name</th>
         <th>Price</th>
+        <th>Action</th>
     </tr>
     </thead>
     <tbody>
@@ -30,6 +34,7 @@
         <td th:text="${book.bookName}"></td>
         <td th:text="${book.bookAuthor}"></td>
         <td th:text="${book.price}"></td>
+        <td align="center"><a th:href="@{/showUpdateIssuedForm/{id}(id=${book.id})}" class="btn btn-info btn-sm mb-3 col-6">Isuue</a></td>
     </tr>
     </tbody>
 </table>

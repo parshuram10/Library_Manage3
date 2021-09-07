@@ -10,9 +10,9 @@
 </head>
 <body>
 <div class="container">
-    <h1>Book</h1>
+    <h1 class="container my-2 font-italic">Book</h1>
     <hr>
-    <h2>Update Book</h2>
+    <h2 class="container my-2 font-italic">Update Book</h2>
     <form action="#" th:action="@{/saveBook}" th:object="${book}"
           method="post">
         <input type="hidden" th:field="*{id}">
