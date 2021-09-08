@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practise Javascript</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <center>
+        <table border="4">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <td><input type="text" name="fname" id="fname"></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Last Name</th>
+                    <td><input type="text" name="lname" id="lname"></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td><input type="text" name="email" id="email"></td>
+                </tr>
+                <tr>
+                    <th>Age</th>
+                    <td><input type="text" name="age" id="age"></td>
+                </tr>
+                <tr id="btna">
+                    <td colspan="2"><input type="button" name="button" id="btn"
+                        value="Add" onclick="addUpRow()"></td>
+                    </tr>
+                    <tr id="bt-edit">
+                        <td colspan="2"><input type="button" name="button" id="edit-btn" value="Edit" onclick="editData()"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table border="4" id="show">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>vaibhav</td>
+                        <td>pawase</td>
+                        <td>vaibhav@gmail.com</td>
+                        <td>23</td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+
+        <script>
+
+            function addUpRow() {
+            // body...
+            var list1 = [];
+            var list2 = [];
+            var list3 = [];
+            var list4 = [];
+
+            var n = 1;
+            var x = 0;
+
+            addRow();
+            function addRow() {
+            // body...
+
+            var addRow = document.getElementById('show');
+            var newRow = addRow.insertRow(n);
+
+            list1[x] = document.getElementById("fname").value;
+            list2[x] = document.getElementById("lname").value;
+            list3[x] = document.getElementById("email").value;
+            list4[x] = document.getElementById("age").value;
+
+            var cell0 = newRow.insertCell(0);
+            var cell1 = newRow.insertCell(1);
+            var cell2 = newRow.insertCell(2);
+            var cell3 = newRow.insertCell(3);
+            
+            cell0.innerHTML = list1[x];
+            cell1.innerHTML = list2[x];
+            cell2.innerHTML = list3[x];
+            cell3.innerHTML = list4[x];
+            console.log(document.getElementById("fname").value);
+            displaySelectedRow();
+            n++;
+            x++;
+        }
+
+    }
+
+    function displaySelectedRow(){
+        var tb = document.getElementById('show');
+        var len = tb.rows.length;
+        for(var i=0;i<len;i++){
+            tb.rows[i].onclick = function(){
+                console.log(this.rowIndex);
+                document.getElementById('fname').value=this.cells[0].innerHTML;
+                document.getElementById('lname').value=this.cells[1].innerHTML;
+                document.getElementById('email').value=this.cells[2].innerHTML;
+                document.getElementById('age').value=this.cells[3].innerHTML;
+            }
+        }
+    }
+
+    function editData() {
+        // body...
+        var table = document.getElementById('show');
+        var len = table.rows.length;
+        var rIndex;
+        for(var i=0;i<len;i++){
+            table.rows[i].onclick = function(){
+               rIndex = this.rowIndex;
+           }
+       }
+
+       table.rows[rIndex].cells[0].innerHTML = document.getElementById('fname');
+       table.rows[rIndex].cells[1].innerHTML = document.getElementById('lname');
+       table.rows[rIndex].cells[2].innerHTML = document.getElementById('email');
+       table.rows[rIndex].cells[3].innerHTML = document.getElementById('age');
+   }
+
+   function allredyAvial() {
+            // body...
+            var table = document.getElementById('show'),rIndex;
+            for(var i = 0;i < table.rows.length; i++){
+                table.rows[i].onclick = function(){
+                    rIndex = this.rowIndex;
+                    console.log(rIndex);
+                    document.getElementById("fname").value = this.cells[0].innerHTML;
+                    document.getElementById("lname").value = this.cells[1].innerHTML;
+                    document.getElementById("email").value = this.cells[2].innerHTML;
+                    document.getElementById("age").value = this.cells[3].innerHTML;
+
+                };
+            }   
+            // table.rows[rIndex].cell0[0].innerHTML = document.getElementById("fname").value;
+            // table.rows[rIndex].cells[1].innerHTML = document.getElementById("lname").value;
+            // table.rows[rIndex].cells[2].innerHTML = document.getElementById("email").value;
+            // table.rows[rIndex].cells[3].innerHTML = document.getElementById("age").value;
+        }
+        allredyAvial()
+    </script>
+    
+</body>
+</html>

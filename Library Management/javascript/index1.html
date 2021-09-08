@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practise Javascript</title>
+</head>
+<body>
+    <center>
+        <div class="container">
+        <div class="tab tab-1">
+            <table id="table" border="1">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                </tr>
+                <tr>
+                    <td>A1</td>
+                    <td>a2</td>
+                    <td>22</td>
+                </tr>
+            </table>
+        </div>
+        <div class="tab">
+            First Name<input type="text" name="fname" id="fname">
+            Last Name<input type="text" name="lname" id="lname">
+            Age<input type="number" name="age" id="age">
+            <br>
+            <button onclick="addHtmlRow()">Add</button>
+            <button onclick="editHtmlData()">Edit</button>
+            <button onclick="removeSelectedRow()">Remove</button>
+        </div>
+    </div>
+    </center>
+    <script>
+
+        function checkEMptyInput() {
+            // body...
+
+            var isEmpty = false, fname = document.getElementById("fname").value,
+            lname = document.getElementById("lname").value,
+            age = document.getElementById("age").value;
+            
+            if(fname===""){
+                alert("First Name Required");
+                isEmpty = true;
+            }else if(lname===""){
+                alert("Last Name Required");
+                isEmpty = true;
+            }else if(age===""){
+                alert("Age Required");
+                isEmpty = true;
+            }
+            return isEmpty;
+        }
+
+        var rIndex, table = document.getElementById("table");
+        
+        function addHtmlRow(){
+
+            if(!checkEMptyInput()){
+            var newRow = table.insertRow(table.length),
+            cell1 = newRow.insertCell(0),
+            cell2 = newRow.insertCell(1),
+            cell3 = newRow.insertCell(2),
+            fname = document.getElementById("fname").value,
+            lname = document.getElementById("lname").value,
+            age = document.getElementById("age").value;
+            // fname = document.getElementById("fname"),
+            // lname = document.getElementById("lname"),
+            // age = document.getElementById("age");
+            cell1.innerHTML = fname;
+            cell2.innerHTML = lname;
+            cell3.innerHTML = age;
+            selectedRow();
+            }
+        }
+
+        function selectedRow() {
+            // body...
+            
+            for(var i=0;i<table.rows.length;i++){
+                table.rows[i].onclick = function(){
+                    rIndex = this.rowIndex;
+
+                    document.getElementById("fname").value = this.cells[0].innerHTML; 
+                    document.getElementById("lname").value = this.cells[1].innerHTML; 
+                    document.getElementById("age").value = this.cells[2].innerHTML; 
+                    console.log(rIndex);
+                };
+            }
+        }
+        selectedRow();
+
+        function editHtmlData() {
+            // body...
+            var fname = document.getElementById("fname").value,
+            lname = document.getElementById("lname").value,
+            age = document.getElementById("age").value;
+            table.rows[rIndex].cells[0].innerHTML = fname;
+            table.rows[rIndex].cells[1].innerHTML = lname;
+            table.rows[rIndex].cells[2].innerHTML = age;
+        }
+
+        function removeSelectedRow(){
+            table.deleteRow(rIndex);
+        }
+    </script>
+</body>
+</html>
