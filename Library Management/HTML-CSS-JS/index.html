@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Project</title>
+	<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div>
+		<div class="container my-5 float-left w-25 row row-eq-height">
+			<h6 class="container my-2 font-italic" id="date"></h6>
+			<h1 class="container my-2 font-italic">Project</h1>
+			<div class="container my-2 float-left">
+				<button class="btn btn-primary btn-sm col-8" id="add" onclick="addForm()">Add</button>
+			</div>
+			<div class="container my-2 float-left">
+				<button class="btn btn-primary btn-sm col-8" id="update" onclick="updateForm()">Update</button>
+			</div>
+			<div class="container my-2 float-left">
+				<button class="btn btn-primary btn-sm col-8" id="del" onclick="delForm()">Delete</button>
+			</div>
+			<div class="container my-2 float-left">
+				<button class="btn btn-primary btn-sm col-8" id="search" onclick="searchForm()">Search</button>
+			</div>
+			<div class="container my-2 float-left">
+				<button class="btn btn-primary btn-sm col-8" id="view" onclick="viewForm()">View</button>
+			</div>
+		</div>
+	</div>
+	<center>
+		<div class="row row-eq-height">
+		<div class="container my-5" id="add-form">
+			<form action="#">
+				<input type="text" id="name" placeholder="Book Name" class="form-control mb-4 col-4">
+				<input type="text" id="author" placeholder="Book Author" class="form-control mb-4 col-4">
+				<input type="text" id="lang" placeholder="Book Language" class="form-control mb-4 col-4">
+				<input type="text" id="price" placeholder="Book Price" class="form-control mb-4 col-4">
+				<button type="submit" class="btn btn-success col-2 font-italic" onclick="saveForm()">Submit</button>
+			</form>
+		</div>
+		<div class="container my-5" id="update-form">
+			<form action="#">
+				<input type="text" placeholder="Book Name Update" class="form-control mb-4 col-4">
+				<input type="text" placeholder="Book Author Update" class="form-control mb-4 col-4">
+				<input type="text" placeholder="Book Language Update" class="form-control mb-4 col-4">
+				<input type="text" placeholder="Book Price Update" class="form-control mb-4 col-4">
+				<button type="submit" class="btn btn-success col-2 font-italic">Update</button>
+			</form>
+		</div>
+		<div class="container my-5" id="del-form">
+			<form action="#">
+				<input type="text" placeholder="Book Name" class="form-control mb-4 col-4">
+				<button type="submit" class="btn btn-success col-2 font-italic">Delete</button>
+			</form>
+		</div>
+		<div class="container my-5" id="search-form">
+			<form action="#">
+				<input type="text" placeholder="Book Name" class="form-control mb-4 col-4">
+				<button type="submit" class="btn btn-success col-2 font-italic">Search</button>
+			</form>
+		</div>
+		<div class="container my-5" id="view-form">
+			<table border="1" class="table table-striped table-responsive-md table-hover" id="table">
+				<thead align="center">
+					<tr>
+						<th>Title</th>
+						<th>Author</th>
+						<th>Language</th>
+						<th>Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Harry</td>
+						<td>JKCrowns</td>
+						<td>English</td>
+						<td>250</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		</div>
+	</center>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
