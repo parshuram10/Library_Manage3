@@ -1,0 +1,29 @@
+#back{
+	background: url("city.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	width: auto;
+	height: 450px;
+}
+#road{
+	background: url("road.jpg");
+	height: 190px;
+}
+#img{
+	width: 150px;
+	margin-top: 50px;
+	margin-left: 1px;
+	border: 1px solid red;
+}
+#btn{
+	background-color: green;
+	width: 150px;
+	font-size: 30px;
+	margin-top: 30px;
+}
+#dbtn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
