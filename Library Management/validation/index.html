@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Validation</title>
+	<style type="text/css">
+	input{
+		margin-top: 20px;
+		margin-left: 20px;
+	}
+	label{
+		width: 250px;
+		display: inline-block;
+		text-align: right;
+    }
+    #btn{
+    	margin-top: 20px;
+    	margin-left: 250px;
+    }
+	</style>
+</head>
+<body>
+	<center>
+		
+			<div>
+				<label>Name:</label>
+				<input type="text" name="name" id="name">
+			</div>
+			<div>
+				<label>Email:</label>
+				<input type="text" name="email" id="email">
+			</div>
+			<div>
+				<label>Mobile No:</label>
+				<input type="text" name="mob" id="mob">
+			</div>
+			<button type="button" id="btn" onclick="validateForm()">Submit</button>
+		
+	</center>
+	<script type="text/javascript">
+		
+		function validateForm() {
+			// body...
+			let name = document.getElementById("name").value;
+			let email = document.getElementById("email").value;
+			let phone = document.getElementById("mob").value;
+
+			if(name==""){
+				alert("Name Must be Entered");
+			}else{
+				let len = name.length;
+				if(len<=2){
+					alert("Name Must be greater than that");
+				}else{
+					console.log("Entered Name is: "+name);
+				}
+			}
+			if(email==""){
+				alert("Email Must be Entered");
+			}else{
+				let len = email.length;
+				let check = 0;
+				if(len<15){
+					alert("Email Must Greater than 15.");
+				}else{
+					for(let i=0;i<len;i++){
+						if(email.charAt(i)=="@"){
+							check++;
+						}
+					}
+					if(check==1){
+					console.log("Entered Email is: "+email);	
+					}else{
+							alert("Email must include @");
+						}
+				}
+				
+			}
+			if(phone==""){
+				alert("Phone Must be Entered");
+			}else{
+				let len = phone.length;
+				let check=0;
+				if(len==10){
+					for(let i=0;i<phone.length;i++){
+						if(phone.charAt(i)>=0 && phone.charAt(i)<=9){
+							check++;
+						}else{
+							alert("Phone Number is not valid.");
+						}
+					}
+					if(check==10)
+						console.log("Entered Phone is: "+phone);
+					else
+						alert("Phone Number is Not Valid.");
+				}else{
+					alert("Phone Number must be 10 digit You give "+len+" digit");
+				}
+			}
+		}
+	</script>
+</body>
+</html>
