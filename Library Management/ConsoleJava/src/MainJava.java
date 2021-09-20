@@ -17,7 +17,6 @@ public class MainJava {
     static BookService bookServiceObj = new BookServiceImpl();
     static Map<Long,BookDetails> mapIssued = new LinkedHashMap<>();
     public static void main(String[] args) throws Exception {
-
         showConsole();
     }
     private static void showConsole() throws Exception {
