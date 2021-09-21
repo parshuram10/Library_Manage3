@@ -1,0 +1,222 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+#main_wrapper{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    top: 1%;
+    padding-bottom: 5%;
+    /* background-color: #1cb5b8; */
+    background: url("/images/slider/1.jpg");
+    animation: 10s slider infinite;
+    float: left;
+    filter: brightness(40%);
+}
+@keyframes slider {
+    0% {
+        background-image: url('/images/slider/1.jpg');
+    }
+
+    35% {
+        background-image: url('/images/slider/2.jpg');
+    }
+
+    67% {
+        background-image: url('/images/slider/3.jpg');
+    }
+}
+#donate-btn{
+    border: 3px solid aquamarine;
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+    color: white;
+    background-color: transparent;
+    margin-top: 20px;
+}
+#donate-btn:hover{
+    background-color: rgb(6, 173, 173);
+}
+#btn{
+    display: block;
+    width: 150px;
+    height: 50px;
+    margin: auto;
+    margin-bottom: 5%;
+}
+#menu{
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    position:absolute;
+    /* background-color: black; */
+}
+#menu ul{
+    margin-right: 75px;
+    float: right;
+    margin-top: 15px;
+}
+#menu ul li{
+    list-style: none;
+}
+#menu li a{
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+}
+#menu li a:hover{
+    color: #1cb5b8;
+}
+#logo{
+    width: 150px;
+    height: 50px;
+    float: left;
+    margin-top: 5px;
+}
+#menu img{
+    margin-left: 150px;
+}
+h1{
+    /* margin-top: 150px; */
+    padding-top: 150px;
+   text-align: center;
+   color: white;
+}
+h2{
+    text-align: center;
+    margin-top: 20px;
+    color: rgb(3, 3, 58);
+}
+p{
+    text-align: center;
+    font-size: 20px;
+}
+#para{
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    display: block;
+    margin:auto ;
+}
+img{
+    width: 100%;
+    height: 250px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+}
+img:hover{
+    background-position: 200px 0;
+    filter: brightness(60%);
+}
+
+ol li{
+    list-style: none;
+    font-size: 12px;
+}
+
+.service{
+    font-size: 15px;
+}
+h3{
+    text-align: center;
+    font-size: 20px;
+}
+.featured-box{
+    border: 2px solid rgb(153, 140, 140);
+    border-radius: 10px;
+    margin: 25px;
+    height: 440px;
+}
+.content{
+    padding: 10px;
+}
+.row{
+    text-align: center;
+    margin: 25px;
+    padding: 10px;
+}
+.inner-lay{
+    color: white;
+}
+.doctor-message{
+    background: url("/images/slider/achievements.jpg") no-repeat;
+    padding: 30px;
+}
+
+.footer{
+    background-image: url("/images/background/footer-bg.png");
+    width: 100%;
+    height: 400px;
+    margin-top: 50px;
+}
+#mission{
+    margin-top: 25px;
+    width: 250px;
+    height: 75%;
+    float: left;
+    color: white;
+    /* background-color: aqua; */
+    margin-left: 50px;
+}
+.title{
+    text-align: center;
+    font-size: 30px;
+}
+
+#title-text{
+    color: white;
+}
+.link{
+    font-size: 15px;
+}
+.link ul{
+    list-style: none;
+}
+
+#services{
+    margin-top: 25px;
+    margin-left: 25px;
+    width: 300px;
+    height: 75%;
+    color: white;
+    /* background-color:aquamarine; */
+    display: inline-block;
+}
+
+#contact{
+    height: 75%;
+    width: 300px;
+    float: right;
+    margin-top: 50px;
+    margin-right: 20px;
+}
+.form{
+    margin: 15px;
+}
+.formtit{
+    margin-left: 25px;
+    font-size: 25px;
+    color: white;
+}
+
+#regards{
+    float: left;
+    color: white;
+    /* width: 75%; */
+    margin-left: 35px;
+}
+
+#blog{
+    font-size: 15px;
+}
+
+#span{
+    color: green;
+    cursor: pointer;
+}
