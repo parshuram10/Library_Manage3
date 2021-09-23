@@ -1,0 +1,19 @@
+@(bookForm : Form[model.Book])
+@import helper._
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Book</title>
+</head>
+<body>
+	
+	<h1>Edit Book</h1>
+	@helper.form(action = routes.BookController.update()){
+		<input type="text" id="id" name="id" placeholder="Id" value="">
+		<input type="text" id="name" name="name" placeholder="Title" value="">
+		<input type="text" id="author" name="author" placeholder="Author" value="">
+		<input type="text" id="price" name="price" placeholder="Price" value="">
+		<input type="submit" value="Create Book">
+	}
+</body>
+</html>
